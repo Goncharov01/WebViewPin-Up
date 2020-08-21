@@ -11,6 +11,8 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import static android.webkit.WebSettings.RenderPriority.HIGH;
+
 public class SecondActivity extends AppCompatActivity {
 
     WebView webView;
@@ -25,7 +27,6 @@ public class SecondActivity extends AppCompatActivity {
         webView.setWebViewClient(new MyWebViewClient());
         webView.loadUrl("https://cutt.ly/qdSsqpB");
         settingWeb();
-
     }
 
     private class MyWebViewClient extends WebViewClient {
@@ -51,8 +52,9 @@ public class SecondActivity extends AppCompatActivity {
         webSettings.setSupportZoom(true);
         webSettings.setBuiltInZoomControls(true);
         webSettings.setDomStorageEnabled(true);
-        webSettings.setUserAgentString("Mozilla/5.0 (Linux; Android 7.0; SM-G930V Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko)");
+        webSettings.setUserAgentString("Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko; googleweblight) Chrome/38.0.1025.166 Mobile Safari/535.19");
         webSettings.setJavaScriptEnabled(true);
+        webSettings.setRenderPriority(HIGH);
         CookieManager.getInstance().setAcceptCookie(true);
     }
 
